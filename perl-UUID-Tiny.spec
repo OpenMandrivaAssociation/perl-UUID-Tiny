@@ -1,26 +1,26 @@
 %define upstream_name    UUID-Tiny
 %define upstream_version 1.03
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
-Summary:    Pure Perl UUID functions
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/UUID/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Pure Perl UUID functions
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/UUID/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Carp)
-BuildRequires: perl(Digest::MD5)
-BuildRequires: perl(Digest::SHA1)
-BuildRequires: perl(IO::File)
-BuildRequires: perl(MIME::Base64)
-BuildRequires: perl(POSIX)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(Time::HiRes)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Carp)
+BuildRequires:	perl(Digest::MD5)
+BuildRequires:	perl(Digest::SHA1)
+BuildRequires:	perl(IO::File)
+BuildRequires:	perl(MIME::Base64)
+BuildRequires:	perl(POSIX)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Time::HiRes)
+BuildArch:	noarch
 
 %description
 UUID::Tiny is a lightweight, low dependency Pure Perl module for UUID
@@ -40,24 +40,25 @@ UUIDs for them!
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes META.yml README
 %{_mandir}/man3/*
-%perl_vendorlib/UUID/
+%{perl_vendorlib}/UUID/
+
+%changelog
+* Thu Apr 29 2010 Michael Scherer <misc@mandriva.org> 1.30.0-1mdv2010.1
++ Revision: 541073
+- import perl-UUID-Tiny
 
 
+* Thu Apr 29 2010 cpan2dist 1.03-1mdv
+- initial mdv release, generated with cpan2dist
