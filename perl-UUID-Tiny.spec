@@ -1,15 +1,15 @@
 %define upstream_name    UUID-Tiny
-%define upstream_version 1.03
+%define upstream_version 1.04
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Pure Perl UUID functions
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/UUID/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/UUID-Tiny
+Source0:	https://cpan.metacpan.org/authors/id/C/CA/CAUGUSTIN/UUID-Tiny-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
