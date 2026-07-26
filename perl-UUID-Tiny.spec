@@ -1,15 +1,13 @@
 %define upstream_name    UUID-Tiny
-%define upstream_version 1.04
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.04
+Release:	2
 
 Summary:	Pure Perl UUID functions
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/UUID-Tiny
-Source0:	https://cpan.metacpan.org/authors/id/C/CA/CAUGUSTIN/UUID-Tiny-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/C/CA/CAUGUSTIN/UUID-Tiny-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -38,7 +36,7 @@ functions equally accept UUIDs and UUID strings, so don't bother to convert
 UUIDs for them!
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
