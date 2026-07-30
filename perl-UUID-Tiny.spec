@@ -1,13 +1,14 @@
 %define upstream_name    UUID-Tiny
+%define upstream_version 1.04
 Name:		perl-%{upstream_name}
 Version:	1.04
-Release:	2
+Release:	1
 
 Summary:	Pure Perl UUID functions
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/UUID-Tiny
-Source0:	https://cpan.metacpan.org/authors/id/C/CA/CAUGUSTIN/UUID-Tiny-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/C/CA/CAUGUSTIN/UUID-Tiny-1.04.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -53,11 +54,3 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{_mandir}/man3/*
 %{perl_vendorlib}/UUID/
 
-%changelog
-* Thu Apr 29 2010 Michael Scherer <misc@mandriva.org> 1.30.0-1mdv2010.1
-+ Revision: 541073
-- import perl-UUID-Tiny
-
-
-* Thu Apr 29 2010 cpan2dist 1.03-1mdv
-- initial mdv release, generated with cpan2dist
